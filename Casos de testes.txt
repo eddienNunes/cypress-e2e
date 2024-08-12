@@ -1,0 +1,51 @@
+Funcionalidade: Login no site SauceDemo
+
+  Cenário: Login com credenciais válidas
+    Dado que o usuário acessa a página de login do site SauceDemo
+    E o usuário insere o nome de usuário "standard_user"
+    E o usuário insere a senha "Password"
+    Quando o usuário clica no botão de login
+    Então o usuário é redirecionado para a página de inventário
+    E a URL deve conter "/inventory.html"
+
+
+
+  Cenário: Login com senha incorreta
+    Dado que o usuário acessa a página de login do site SauceDemo
+    E o usuário insere o nome de usuário "standard_user"
+    E o usuário insere a senha "senha_incorreta"
+    Quando o usuário clica no botão de login
+    Então o usuário vê uma mensagem de erro "Epic sadface: Username and password do not match any user in this service"
+    E o usuário permanece na página de login
+
+
+
+
+  Cenário: Login com campo de senha vazio
+    Dado que o usuário acessa a página de login do site SauceDemo
+    E o usuário insere o nome de usuário "standard_user"
+    E o usuário deixa o campo de senha vazio
+    Quando o usuário clica no botão de login
+    Então o usuário vê uma mensagem de erro "Epic sadface: Password is required"
+    E o usuário permanece na página de login
+
+
+
+
+  Cenário: Login com campo de nome de usuário vazio
+    Dado que o usuário acessa a página de login do site SauceDemo
+    E o usuário deixa o campo de nome de usuário vazio
+    E o usuário insere a senha "Password"
+    Quando o usuário clica no botão de login
+    Então o usuário vê uma mensagem de erro "Epic sadface: Username is required"
+    E o usuário permanece na página de login
+
+
+
+  Cenário: Login com ambos os campos vazios
+    Dado que o usuário acessa a página de login do site SauceDemo
+    E o usuário deixa o campo de nome de usuário vazio
+    E o usuário deixa o campo de senha vazio
+    Quando o usuário clica no botão de login
+    Então o usuário vê uma mensagem de erro "Epic sadface: Username is required"
+    E o usuário permanece na página de login
